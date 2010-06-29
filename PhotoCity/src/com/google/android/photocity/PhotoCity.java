@@ -49,6 +49,7 @@ public class PhotoCity extends MapActivity implements LocationListener {
 	static final String MODEL = "model";
 	static final String USER = "user";
 	static final String PASSWORD = "pass";
+	static final String HAS_RUN = "has_run";
 	
 	static final String PREFS_FILE = "PhotoCityPreferences";
 	
@@ -109,12 +110,29 @@ public class PhotoCity extends MapActivity implements LocationListener {
         	zones = ZoneList.instance().getZoneList();
         	drawZones();
         }
-    }
+        if (!hasRun()) {
+        	Intent i = new Intent(this, HelpActivity.class);
+        	i.putExtra(HelpActivity.URL, "file:///android_asset/howto.html");
+        	startActivity(i);
+        	setHasRun();
+        }
+	}
 	
 	@Override
 	protected void onStop() {
 		super.onStop();
 		saveUserAndPassword();
+	}
+	
+	protected boolean hasRun() {
+		SharedPreferences settings = getSharedPreferences(PREFS_FILE, 0);
+		return settings.getBoolean(HAS_RUN, false);
+	}
+	
+	protected void setHasRun() {
+		SharedPreferences settings = getSharedPreferences(PREFS_FILE, 0);
+		SharedPreferences.Editor editor = settings.edit();
+		editor.putBoolean(HAS_RUN, true);
 	}
 	
 	protected void saveUserAndPassword() {

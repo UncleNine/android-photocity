@@ -24,4 +24,10 @@
     android:layout_height="wrap_content" 
     android:id="@+id/help_web"
     />
+<Button
+    android:id="@+id/done"
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content"
+    android:text="Ok"
+    />
 </LinearLayout>
