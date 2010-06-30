@@ -12,7 +12,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 */
-package com.google.android.photocity;
+package com.photocitygame.android;
 
 import java.io.IOException;
 import java.util.List;
@@ -22,7 +22,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
-import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -38,6 +37,11 @@ import com.google.android.maps.MapActivity;
 import com.google.android.maps.MapView;
 import com.google.android.maps.Overlay;
 import com.google.android.maps.OverlayItem;
+import com.google.android.photocity.ImageOverlay;
+import com.google.android.photocity.LocationSource;
+import com.google.android.photocity.ParcelableZone;
+import com.google.android.photocity.TapHandler;
+import com.google.android.photocity.ZoneList;
 import com.google.photocity.PhotoCityAPI;
 import com.google.photocity.UWPhotoCityApi;
 import com.google.photocity.User;
@@ -69,6 +73,8 @@ public class PhotoCity extends MapActivity implements LocationListener {
 	
 	String user;
 	String password;
+	
+	boolean started;
 	
 	@Override
 	protected boolean isRouteDisplayed() {
@@ -110,11 +116,12 @@ public class PhotoCity extends MapActivity implements LocationListener {
         	zones = ZoneList.instance().getZoneList();
         	drawZones();
         }
-        if (!hasRun()) {
+        if (!hasRun() && !started) {
         	Intent i = new Intent(this, HelpActivity.class);
         	i.putExtra(HelpActivity.URL, "file:///android_asset/howto.html");
         	startActivity(i);
-        	setHasRun();
+        	started = true;
+        	//setHasRun();
         }
 	}
 	
@@ -133,6 +140,7 @@ public class PhotoCity extends MapActivity implements LocationListener {
 		SharedPreferences settings = getSharedPreferences(PREFS_FILE, 0);
 		SharedPreferences.Editor editor = settings.edit();
 		editor.putBoolean(HAS_RUN, true);
+		editor.commit();
 	}
 	
 	protected void saveUserAndPassword() {

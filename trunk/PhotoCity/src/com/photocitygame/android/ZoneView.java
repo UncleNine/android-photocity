@@ -12,7 +12,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 */
-package com.google.android.photocity;
+package com.photocitygame.android;
 
 import java.io.IOException;
 import java.util.List;
@@ -29,6 +29,13 @@ import com.google.android.maps.MapActivity;
 import com.google.android.maps.MapView;
 import com.google.android.maps.Overlay;
 import com.google.android.maps.OverlayItem;
+import com.google.android.photocity.ImageOverlay;
+import com.google.android.photocity.LocationSource;
+import com.google.android.photocity.ParcelableFlag;
+import com.google.android.photocity.ParcelableModel;
+import com.google.android.photocity.ParcelableZone;
+import com.google.android.photocity.TapHandler;
+import com.google.android.photocity.ZoneList;
 import com.google.photocity.Flag;
 import com.google.photocity.Model;
 import com.google.photocity.User;

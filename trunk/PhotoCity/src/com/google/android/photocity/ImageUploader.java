@@ -23,6 +23,7 @@ import android.widget.Toast;
 
 import com.google.photocity.Flag;
 import com.google.photocity.Model;
+import com.photocitygame.android.PhotoCity;
 
 public class ImageUploader implements Runnable {
 	protected Context context;

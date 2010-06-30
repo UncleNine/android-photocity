@@ -9,7 +9,7 @@ import android.util.Log;
 import com.google.android.maps.GeoPoint;
 
 public class LocationSource {
-	static Location getLocation(Context context) {
+	public static Location getLocation(Context context) {
 		LocationManager loc = (LocationManager)context.getSystemService(Context.LOCATION_SERVICE);
 		if (loc == null) {
 			return null;
@@ -18,7 +18,7 @@ public class LocationSource {
 		return myLocation;
 	}
 	
-	static GeoPoint getGeoPointLocation(Context context) {
+	public static GeoPoint getGeoPointLocation(Context context) {
 		Location myLocation = getLocation(context);
 		if (myLocation != null) {
 			return new GeoPoint((int)(myLocation.getLatitude() * 1000000), (int)(myLocation.getLongitude() * 1000000));
