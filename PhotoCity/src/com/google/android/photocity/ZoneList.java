@@ -20,6 +20,7 @@ import java.util.List;
 import android.util.Log;
 
 import com.google.photocity.Zone;
+import com.photocitygame.android.PhotoCity;
 
 public class ZoneList {
     List<Zone> zoneList;

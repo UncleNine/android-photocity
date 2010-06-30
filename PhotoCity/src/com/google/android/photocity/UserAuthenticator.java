@@ -19,6 +19,8 @@ import java.io.IOException;
 import android.app.ProgressDialog;
 
 import com.google.photocity.User;
+import com.photocitygame.android.PasswordActivity;
+import com.photocitygame.android.PhotoCity;
 
 public class UserAuthenticator implements Runnable {
 	String username;

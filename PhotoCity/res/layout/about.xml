@@ -25,6 +25,14 @@
     android:text="About PhotoCity"
     />
 <TextView
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="PhotoCity for Android uploads images taken in the application to
+PhotoCity servers for use in constructing three-dimensional models of
+the world.  For more information about how these images are used,
+please see:  http://photocitygame.com/"
+    />
+<TextView
     android:layout_width="fill_parent" 
     android:layout_height="wrap_content" 
     android:text="©2010 Google, Inc."

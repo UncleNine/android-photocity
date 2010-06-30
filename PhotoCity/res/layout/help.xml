@@ -18,16 +18,11 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:id="@+id/layout"
     >
 <WebView
     android:layout_width="fill_parent" 
     android:layout_height="wrap_content" 
     android:id="@+id/help_web"
-    />
-<Button
-    android:id="@+id/done"
-    android:layout_width="wrap_content" 
-    android:layout_height="wrap_content"
-    android:text="Ok"
     />
 </LinearLayout>

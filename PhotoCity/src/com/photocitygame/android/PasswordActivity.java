@@ -12,7 +12,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 */
-package com.google.android.photocity;
+package com.photocitygame.android;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -26,6 +26,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.android.photocity.UserAuthenticator;
 import com.google.photocity.User;
 
 public class PasswordActivity extends Activity implements OnClickListener {

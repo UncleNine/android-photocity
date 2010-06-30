@@ -12,7 +12,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 */
-package com.google.android.photocity;
+package com.photocitygame.android;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -46,6 +46,8 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.photocity.ImageUploader;
+import com.google.android.photocity.ParcelableFlag;
 import com.google.photocity.Flag;
 import com.google.photocity.Model;
 import com.google.photocity.User;
